@@ -23,3 +23,7 @@ a {
 .container h1{
 	text-align: center;
 }
+
+li{
+  text-decoration: none;
+}

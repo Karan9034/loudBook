@@ -1,9 +1,12 @@
 import Dashboard from '../components/Dashboard'
+import books from '../data'
 
 const Home = () => {
   	return (
-		<Dashboard />
+		<Dashboard books={books}/>
   	)
 }
+
+
 
 export default Home

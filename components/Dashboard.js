@@ -1,17 +1,14 @@
 import Link from 'next/link'
 
-const Dashboard = () => {
+const Dashboard = ({books}) => {
 	return (
 		<div className='container'>
-			<div className="col">
-				<h3>Book - 1</h3>
-			</div>
-			<div className="col">
-				<h3>Book - 2</h3>
-			</div>
-			<div className="col">
-				<h3>Book - 3</h3>
-			</div>
+			{ books.map(book => (
+					<div key={book.id} className="col">
+						<Link href={`/${book.path}`}><a><h3>{book.name}</h3></a></Link>
+					</div>
+				)
+			)}
 		</div>
 	)
 }

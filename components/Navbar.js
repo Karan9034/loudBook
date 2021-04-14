@@ -1,9 +1,18 @@
 import Link from 'next/link'
+import Typography from '@material-ui/core/Typography'
 
 const Navbar = () => {
 	return (
 		<Link href='/'>
-			<a><h1>AudioBooks</h1></a>
+			<a>
+				<Typography
+					variant='h2'
+					component='h1'
+					align='center'
+				>
+				AudioBooks
+				</Typography>
+			</a>
 		</Link>
 	)
 }

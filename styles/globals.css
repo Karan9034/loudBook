@@ -15,15 +15,3 @@ a {
   box-sizing: border-box;
 }
 
-.container{
-	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
-}
-.container h1{
-	text-align: center;
-}
-
-li{
-  text-decoration: none;
-}

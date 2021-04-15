@@ -9,6 +9,7 @@ const Navbar = () => {
 					variant='h2'
 					component='h1'
 					align='center'
+					color="primary"
 				>
 				AudioBooks
 				</Typography>

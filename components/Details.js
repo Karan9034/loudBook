@@ -10,13 +10,22 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import MenuBookOutlinedIcon from '@material-ui/icons/MenuBookOutlined';
-import { makeStyles } from '@material-ui/core';
 
 
 const Details = ({book}) => {
 	return (
 		<Container>
-			<Typography variant="h3" component="h2" color="textSecondary" align="center">{book.name}</Typography>
+			<Typography
+				variant="h3"
+				component="h2"
+				color="textSecondary"
+				align="center"
+				style={{
+					margin: "2vw auto"
+				}}
+			>
+				{book.name}
+			</Typography>
 			<Grid container spacing={3}>
 				{ book.chapters.map(chapter => (
 					<Grid key={chapter.id} item xs={12} sm={6} md={4}>

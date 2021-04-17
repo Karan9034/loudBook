@@ -1,34 +1,46 @@
 import {useState} from 'react'
+import Link from 'next/link'
+import Typography from '@material-ui/core/Typography'
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+
 
 const Player = ({book, chapter}) => {
-	const [playing, setPlaying] = useState(true)
-
-
-	const playPause = (e) => {
-		if(playing){
-			setPlaying(false)
-			e.target.innerHTML = "Play"
-		}
-		else{
-			e.target.innerHTML = "Pause"
-			setPlaying(true)
-		}
-	}
-
 	return (
 		<div className='container'>
-			<h3>{book.name} - {chapter.name}</h3>
+			<Typography
+				variant="h3"
+				component="h2"
+				color="textSecondary"
+				align="center"
+				style={{
+					margin: "2vw auto"
+				}}
+			>{book.name} - {chapter.name}</Typography>
 
 			<div>
-				<audio autoPlay={playing} src={`/audio/${book.path}/${chapter.path}.mp3`} preload="metadata" loop />
-				<button onClick={playPause} >Pause</button>
-				<input type="range" id="seek-slider" max="100" value="0" />
-				<span id="current-time" class="time">0:00</span>
-				<span id="duration" class="time">0:00</span>
-				<output id="volume-output">100</output>
-				<input type="range" id="seek-slider" max="100" value="100" />
-				<button id="mute-icon">mute</button>
+				<AudioPlayer
+				    loop={true}
+				    preload="auto"
+				    src={`/audio/${book.path}/${chapter.path}.mp3`}
+				/>
 			</div>
+			<footer>
+				<Link href={`/${book.path}`}><a>
+					<Typography
+						variant="body2"
+						component="p"
+						color="textSecondary"
+						style={{
+							textDecoration: "underline",
+							marginTop: "5vw"
+						}}
+						align="center"
+					>
+					Go Back
+					</Typography>
+				</a></Link>
+			</footer>
 		</div>
 	)
 }

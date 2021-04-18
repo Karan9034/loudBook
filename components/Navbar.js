@@ -11,7 +11,7 @@ const Navbar = () => {
 					align='center'
 					color="primary"
 				>
-				AudioBooks
+				LoudBook
 				</Typography>
 			</a>
 		</Link>
